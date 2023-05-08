@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 /** component define behaviour of propert or class
  * decorator accept object as parameters
  */
@@ -10,9 +10,8 @@ import { Component } from "@angular/core";
   styleUrls :['Property-card.component.css'] 
 })
 export class PropertyCardComponent{
-  property: any = {
-    "id": 1,
-    "name": "DHA house",
-    "price" :12000000000000
-  }
+  /** receive data from property_list by declaring input parameter property_name =type as following*/
+  /**how to pass data from parent component to child using input decorator*/
+  @Input() property: any
+  
 }
