@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\nav-bar",
+    "\\src\\app\\Property",
+    "\\src\\app\\Property\\Property-card",
+    "\\src\\app\\Property\\property-list",
+    "\\src\\assets"
+  ],
+  "SelectedNode": "\\src\\app\\app.module.ts",
+  "PreviewInSolutionExplorer": false
+}
