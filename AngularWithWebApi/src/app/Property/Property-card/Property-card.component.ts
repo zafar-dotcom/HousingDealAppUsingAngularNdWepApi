@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { IProperty } from "../iproperty";
 /** component define behaviour of propert or class
  * decorator accept object as parameters
  */
@@ -12,6 +13,7 @@ import { Component, Input } from "@angular/core";
 export class PropertyCardComponent{
   /** receive data from property_list by declaring input parameter property_name =type as following*/
   /**how to pass data from parent component to child using input decorator*/
-  @Input() property: any
+  /**input will catch data from property list html where this ts selecter define and pass property*/
+  @Input() property!: IProperty 
   
 }

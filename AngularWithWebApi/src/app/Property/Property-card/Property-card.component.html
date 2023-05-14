@@ -5,11 +5,30 @@ data flow in one direction from component to html
 
 
         <div class="card">
-        <img class="defimg" src="assets/images/house-default.jpg">
+            <div class="card-img-wrapper">
+                <!--  if some values in (*ngIf structurel directive) property.image it consider as true otherwise false
+                    {{property.image}}  >string interploation
+                -->
+                <img *ngIf="property.image" class="card-img-top" src="assets/images/{{property.image}}.jpg">
+                <img *ngIf="!property.image" class="card-img-top" src="assets/images/default.jpg">
+                <ul class="list-inline card-member-icon card-ul-animate">
+                     <li class="list-inline-item" >
+                        <button routerLink="/property-detail/{{property.id}}" class="btn btn-primary">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>                       
+                    </li>
+                            <li class="list-inline-item" >
+                             <button  class="btn btn-primary">
+                                 <i class="fa-solid fa-list"></i>
+                             </button>
+                            </li>
+                    </ul>
+            </div>
+        
        <div class=card-body p-2>
             <h1>{{property.id}}</h1>
             <h2>{{property.name}}</h2>
-            <h3>{{property.price}}</h3>
+            <h1>{{property.price}}</h1>
              
        </div>
        

@@ -4,9 +4,13 @@
     "\\AngularWithWebApi",
     "\\AngularWithWebApi\\src",
     "\\AngularWithWebApi\\src\\app",
+    "\\AngularWithWebApi\\src\\app\\nav-bar",
     "\\AngularWithWebApi\\src\\app\\Property",
-    "\\AngularWithWebApi\\src\\app\\Property\\Property-card"
+    "\\AngularWithWebApi\\src\\app\\Property\\add-property",
+    "\\AngularWithWebApi\\src\\app\\Property\\property-detail",
+    "\\AngularWithWebApi\\src\\app\\services",
+    "\\AngularWithWebApi\\src\\data"
   ],
-  "SelectedNode": "\\AngularWithWebApi\\src\\app\\Property\\Property-card\\Property-card.component.css",
+  "SelectedNode": "\\AngularWithWebApi\\src\\app\\Property\\property-list\\property-list.component.html",
   "PreviewInSolutionExplorer": false
 }

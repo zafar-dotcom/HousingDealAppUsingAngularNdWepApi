@@ -1,41 +1,35 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HousingService } from '../../services/housing.service';
+import { IProperty } from '../iproperty';
 
 @Component({
   selector: 'app-property-list',
   templateUrl: './property-list.component.html',
   styleUrls: ['./property-list.component.css']
 })
-export class PropertyListComponent {
-  properties: Array<any> = [
-    {
-       "id": 1,
-       "name": "DHA Rawalpindi house",
-       "price": 11000000000000
-    },
-    {
-      "id": 2,
-      "name": "behrtia town korngi house",
-      "price": 12000000000000
-    },
-    {
-      "id": 3,
-      "name": "DHA Karachi house",
-      "price": 13000000000000
-    },
-    {
-      "id": 4,
-      "name": "DHA house",
-      "price": 12000000000000
-    },
-    {
-      "id": 5,
-      "name": "behrtia town lahore phase 2 house",
-      "price": 12000000000000
-    },
-    {
-      "id": 6,
-      "name": "DHA Multan house",
-      "price": 120000000000000
+export class PropertyListComponent implements OnInit {
+  properties: Array<IProperty> = [];
+  sellrent: number= 1;
+  constructor(private housingservice: HousingService, private route: ActivatedRoute) { }
+  ngOnInit(): void {
+    if (this.route.snapshot.url.toString()) {
+      this.sellrent = 2;
+      //  means we are in rent property here for 2 else in sell
+      //
     }
-  ]
+    this.housingservice.getallproperties(this.sellrent).subscribe(
+      data => {
+        console.log(data);
+        this.properties = data;
+        console.log();
+      },
+      error => {
+        console.log(error);
+      }
+    );      
+  }
+
+    
 }

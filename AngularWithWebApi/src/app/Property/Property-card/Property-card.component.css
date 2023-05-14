@@ -1,12 +1,52 @@
 h1{
 font-weight:lighter;    
 }
-.defimg{
-  height: 200px;
-  width:275px;
-  margin-top:10px;
-  margin-left:5px;
+
+.card-img-wrapper{
+    overflow:hidden;
+    position:relative;
 }
-.card{
+.card {
+  margin: 5px;
+}
+  .card:hover img {
+    transform: scale(1.2,1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    height: 180px;
+    width:250px;
+    opacity: .2;
     margin:10px;
+   
+    
+    margin-left: 5px;
+  }
+  .card img {
+    transform: scale(1,1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    height: 180px;
+    width:250px;
+    margin:10px;
+    margin-left:5px;
+    
+    
+  }
+.card-member-icon {
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  right: 0;
+  margin-left: 5px;
+  margin-right: auto;
+  opacity:0;
+}
+
+.card-img-wrapper:hover .card-member-icon {
+  bottom: 0;
+  margin-left:5px;
+  opacity:1;
+}
+.card-ul-animate{
+    transition :all 0.5s ease-in-out;
 }
