@@ -14,16 +14,15 @@ export class PropertyListComponent implements OnInit {
   sellrent: number= 1;
   constructor(private housingservice: HousingService, private route: ActivatedRoute) { }
   ngOnInit(): void {
-    if (this.route.snapshot.url.toString()) {
-      this.sellrent = 2;
-      //  means we are in rent property here for 2 else in sell
-      //
-    }
+    //if (this.route.snapshot.url.toString()) {
+    //  this.sellrent = 2;
+    //  //  means we are in rent property here for 2 else in sell
+    //  //
+    //}
     this.housingservice.getallproperties(this.sellrent).subscribe(
       data => {
         console.log(data);
         this.properties = data;
-        console.log();
       },
       error => {
         console.log(error);

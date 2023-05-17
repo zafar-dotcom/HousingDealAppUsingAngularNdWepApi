@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, Route } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HousingService } from './services/housing.service';
 import { AddPropertyComponent } from './Property/add-property/add-property.component';
 import { PropertyDetailComponent } from './Property/property-detail/property-detail.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
  // typscript make http cal to services > api >responce >set rep data to associate property >used in template(html/css)
 /**Deine mapping as following*/
 
@@ -21,7 +24,9 @@ const approutes: Routes = [
   { path: 'rent-propery', component: PropertyListComponent },
   { path: 'add-property', component: AddPropertyComponent },
   { path: 'property-detail/:id', component: PropertyDetailComponent },
-  { path: '**', component: PropertyListComponent }
+  { path: 'user/login', component: UserLoginComponent },
+  { path: 'user/register', component: UserRegisterComponent },
+  { path: '**', component: PropertyListComponent },
 ]
 
 @NgModule({
@@ -32,11 +37,18 @@ const approutes: Routes = [
     NavBarComponent,
     AddPropertyComponent,
     PropertyDetailComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+   /* template driven form */
+    FormsModule,
+    /*reactive form we use following*/
+    ReactiveFormsModule,
     /**Register approutes  mapping here */
     RouterModule.forRoot(approutes)
     

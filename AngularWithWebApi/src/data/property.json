@@ -1,13 +1,16 @@
-[{
-  "id": 1,
-  "sellrent": 1,
-  "name": "DHA Rawalpindi ",
-  "price": 110075,
-  "image": "image-1"
- },
+[
+  {
+    "id": 1,
+    "sellrent": 1,
+    "type": "villas",
+    "name": "DHA Rawalpindi ",
+    "price": 110075,
+    "image": "image-1"
+  },
   {
     "id": 2,
     "sellrent": 2,
+    "type": "villas",
     "name": "behrtia town korngi ",
     "price": 120000000,
     "image": "image-2"
@@ -15,6 +18,7 @@
   {
     "id": 3,
     "sellrent": 2,
+    "type": "villas",
     "name": "DHA Karachi house",
     "price": 1300000000,
     "image": "image-3"
@@ -22,6 +26,7 @@
   {
     "id": 4,
     "sellrent": 1,
+    "type": "villas",
     "name": "DHA house",
     "price": 120000000,
     "image": "image-4"
@@ -29,7 +34,7 @@
   {
     "id": 5,
     "sellrent": 1,
-
+    "type": "villas",
     "name": "behrtia town ",
     "price": 120000000,
     "image": "image-5"
@@ -37,9 +42,10 @@
   {
     "id": 6,
     "sellrent": 1,
+    "type": "villas",
     "name": "DHA Multan house",
     "price": 1200000000,
     "image": "image-6"
 
   }
-  ]
+]

@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col-6 m-auto">
+        <div class="card m-auto">
+            
+                <div class="card-header ">
+                    Register
+                </div>
+                <div class="card-body">
+<!-- #formGroup="userregisterform"  is template variable and formGroup (rep collection of controls or track values)-->
+                    <form  [formGroup]="userregisterform" (ngSubmit)="onSubmit()" >
+                        <div class="form-group col-12">
+                            <label for="name" >Name</label>
+                          <!--  formControlName is like ngmodel and used to declare variables e.g userName-->
+                            <input type="text" class="form-control form-control-sm" formControlName="username"/>
+                           <span *ngIf="userregisterform.get('username')?.invalid
+                        && userregisterform.get('username')?.touched"
+                           class ="error-block"
+                           >
+                            Please provide a valid username.
+                        </span>
+
+                        </div>
+                        <br/>
+                          <div class="form-group col-12">
+                              <label for="email" >Email</label>
+                              <input type="text" class="form-control form-control-sm" formControlName="email"/>
+                              <div *ngIf="submitted && userregisterform.get('email')?.errors" class="error-block">
+                                  <span *ngIf="userregisterform.get('email')?.hasError('required')">
+                                      Email is mendatory
+                                  </span>
+                              <span
+                              *ngIf="userregisterform.get('email')?.invalid && userregisterform.get('email')?.touched"
+                              class="error-block">please provide valid Email
+                             </span>
+                             </div>
+                          </div>
+                          <br/>
+                            <div class="form-group col-12">
+                              <label for="password" >Password</label>
+                              <input type="text" class="form-control form-control-sm" formControlName="password"/>
+                              <div *ngIf="submitted && userregisterform.get('password')?.errors">
+                             <!-- <span *ngIf="userregisterform.get('password')?.invalid && userregisterform.get('password')?.touched">
+                               
+                              </span>-->
+                                <!-- .errors return aray of errors so get it by index ['']-->
+                                  <span *ngIf="userregisterform.get('password')?.hasError('required')" class="error-block">Password required</span>
+                                  <span *ngIf="userregisterform.get('password')?.errors?.['minlength']"
+                                  class="error-block">
+                                  Password length should be at least 8 character</span>
+                             </div>
+                             
+                          </div>
+                          <br/>
+                            <div class="form-group col-12">
+                              <label for="cpassword" >Confirm Password</label>
+                              <input type="text" class="form-control form-control-sm" formControlName="confirmpassword"/>
+                              
+                              <div *ngIf="submitted && userregisterform.get('confirmpassword')?.errors" class="error-block">
+                   
+                               <span *ngIf="userregisterform.hasError('confirmPasswordValidator', 'confirmpassword')">
+                                  Confirm Password did not match
+                              </span>
+                              <span *ngIf="userregisterform.get('confirmpassword')?.errors?.['required'] " >
+                              Confirm password is required
+                            </span>
+                              </div>
+                             <!-- <span
+                               *ngIf="userregisterform.get('confirmpassword')?.errors?.confirmPasswordValidator "  class="error-block">
+                                Confirm Password did not match
+                              </span>-->
+                              
+                          </div>
+                          <br/>
+                            <div class="form-group col-12">
+                              <label for="name" >Mobile</label>
+                              <input type="text" class="form-control form-control-sm" formControlName="mobile"/>
+                              <div *ngIf="submitted && mobile?.errors" class="error-block">
+                              <span *ngIf="mobile?.errors?.['required']">Mobile is mendatory</span>
+                              </div>
+                          </div>
+                          <br/>
+                            <div class="form-group col-12">
+                              <button type="submit"  class="btn btn-primary mr-2" >Sign up</button>
+                              <button type="reset" class="btn btn-secondary mr-2">Cancel</button>
+                              
+                          </div>
+                          Form Values :{{userregisterform.value | json}}
+                          Form Status :{{userregisterform.valid}}
+                    </form>
+                </div>
+
+        </div>
+    </div>
+</div>
+

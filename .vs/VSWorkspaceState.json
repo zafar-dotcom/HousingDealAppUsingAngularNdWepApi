@@ -4,13 +4,11 @@
     "\\AngularWithWebApi",
     "\\AngularWithWebApi\\src",
     "\\AngularWithWebApi\\src\\app",
-    "\\AngularWithWebApi\\src\\app\\nav-bar",
-    "\\AngularWithWebApi\\src\\app\\Property",
-    "\\AngularWithWebApi\\src\\app\\Property\\add-property",
-    "\\AngularWithWebApi\\src\\app\\Property\\property-detail",
     "\\AngularWithWebApi\\src\\app\\services",
-    "\\AngularWithWebApi\\src\\data"
+    "\\AngularWithWebApi\\src\\app\\user",
+    "\\AngularWithWebApi\\src\\app\\user\\user-register",
+    "\\AngularWithWebApi\\src\\assets"
   ],
-  "SelectedNode": "\\AngularWithWebApi\\src\\app\\Property\\property-list\\property-list.component.html",
+  "SelectedNode": "\\AngularWithWebApi\\src\\app\\user\\user-register\\user-register.component.spec.ts",
   "PreviewInSolutionExplorer": false
 }
