@@ -4,11 +4,13 @@
     "\\AngularWithWebApi",
     "\\AngularWithWebApi\\src",
     "\\AngularWithWebApi\\src\\app",
+    "\\AngularWithWebApi\\src\\app\\Model",
+    "\\AngularWithWebApi\\src\\app\\nav-bar",
     "\\AngularWithWebApi\\src\\app\\services",
     "\\AngularWithWebApi\\src\\app\\user",
-    "\\AngularWithWebApi\\src\\app\\user\\user-register",
-    "\\AngularWithWebApi\\src\\assets"
+    "\\AngularWithWebApi\\src\\app\\user\\user-login",
+    "\\AngularWithWebApi\\src\\app\\user\\user-register"
   ],
-  "SelectedNode": "\\AngularWithWebApi\\src\\app\\user\\user-register\\user-register.component.spec.ts",
+  "SelectedNode": "\\AngularWithWebApi\\package.json",
   "PreviewInSolutionExplorer": false
 }

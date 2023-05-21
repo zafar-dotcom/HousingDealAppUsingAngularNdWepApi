@@ -14,6 +14,8 @@ import { AddPropertyComponent } from './Property/add-property/add-property.compo
 import { PropertyDetailComponent } from './Property/property-detail/property-detail.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserServiceService } from './services/user-service.service';
+import { AlertifyService } from './services/alertify.service';
  // typscript make http cal to services > api >responce >set rep data to associate property >used in template(html/css)
 /**Deine mapping as following*/
 
@@ -54,7 +56,9 @@ const approutes: Routes = [
     
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserServiceService,
+    AlertifyService
   ],
   bootstrap: [AppComponent]
 })

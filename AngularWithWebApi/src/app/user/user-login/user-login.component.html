@@ -6,22 +6,22 @@
                     Login User
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form #LoginForm="ngForm" (ngSubmit)="onLogin(LoginForm)">
                         
                           <div class="form-group col-12">
-                              <label for="email" >Email</label>
-                              <input type="text" class="form-control form-control-sm"/>
+                              <label for="email" >Name</label>
+                              <input type="text" class="form-control form-control-sm" required ngModel name="username"/>
                           </div>
                           <br/>
                             <div class="form-group col-12">
                               <label for="password" >Password</label>
-                              <input type="text" class="form-control form-control-sm"/>
+                              <input type="password" class="form-control form-control-sm" required ngModel name="password"/>
                           </div>
                             
                         
                           <br/>
                             <div class="form-group col-12">
-                              <button type="submit" class="btn btn-primary me-2">Login</button>
+                              <button [disabled]="!LoginForm.valid" type="submit"   class="btn btn-primary me-2">Login</button>
                               <button type="reset" class="btn btn-secondary mr-2">Cancel</button>
                               
                           </div>

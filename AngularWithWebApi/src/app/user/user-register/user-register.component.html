@@ -37,7 +37,7 @@
                           <br/>
                             <div class="form-group col-12">
                               <label for="password" >Password</label>
-                              <input type="text" class="form-control form-control-sm" formControlName="password"/>
+                              <input type="password" class="form-control form-control-sm" formControlName="password"/>
                               <div *ngIf="submitted && userregisterform.get('password')?.errors">
                              <!-- <span *ngIf="userregisterform.get('password')?.invalid && userregisterform.get('password')?.touched">
                                
@@ -53,7 +53,7 @@
                           <br/>
                             <div class="form-group col-12">
                               <label for="cpassword" >Confirm Password</label>
-                              <input type="text" class="form-control form-control-sm" formControlName="confirmpassword"/>
+                              <input type="password" class="form-control form-control-sm" formControlName="confirmpassword"/>
                               
                               <div *ngIf="submitted && userregisterform.get('confirmpassword')?.errors" class="error-block">
                    
