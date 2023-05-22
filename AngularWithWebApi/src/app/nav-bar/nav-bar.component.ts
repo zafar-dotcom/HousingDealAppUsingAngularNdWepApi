@@ -1,16 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AlertifyService } from '../services/alertify.service';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
+  loggedinuser!: string;
+  constructor(private alertify: AlertifyService) { }
+  ngOnInit() {
+
+  }
   login() {
     /*if token is present then it will retuen token else null or undefined*/
-    return localStorage.getItem('token');
+    this.loggedinuser = localStorage.getItem('token') || '';
+    return this.loggedinuser;
+
+
   }
   Logout() {
     localStorage.removeItem('token');
+    this.alertify.success("Logout successfully");
+
   }
 }
