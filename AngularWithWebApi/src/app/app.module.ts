@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, Route } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertyCardComponent } from './Property/Property-card/Property-card.component';
@@ -47,13 +52,14 @@ const approutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-   /* template driven form */
-    FormsModule,
-    /*reactive form we use following*/
-    ReactiveFormsModule,
-    /**Register approutes  mapping here */
-    RouterModule.forRoot(approutes)
-    
+    FormsModule,                          //template driven form 
+    ReactiveFormsModule,                  //reactive form we use following  
+    RouterModule.forRoot(approutes),      //Register approutes  mapping here
+    BrowserAnimationsModule,              // ngx bootstrap  for dropdown
+    BsDropdownModule.forRoot(),          //ngx bootstrap for dropdown
+    TabsModule.forRoot(),                //ngx bootstrap for tabs
+    ButtonsModule.forRoot(),             //ngx bootstrap for check button
+    BsDatepickerModule.forRoot()        //ngx bootstrap for date picker
   ],
   providers: [
     HousingService,

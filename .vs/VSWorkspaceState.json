@@ -4,13 +4,13 @@
     "\\AngularWithWebApi",
     "\\AngularWithWebApi\\src",
     "\\AngularWithWebApi\\src\\app",
-    "\\AngularWithWebApi\\src\\app\\Model",
-    "\\AngularWithWebApi\\src\\app\\nav-bar",
+    "\\AngularWithWebApi\\src\\app\\Property",
+    "\\AngularWithWebApi\\src\\app\\Property\\Property-card",
     "\\AngularWithWebApi\\src\\app\\services",
     "\\AngularWithWebApi\\src\\app\\user",
     "\\AngularWithWebApi\\src\\app\\user\\user-login",
     "\\AngularWithWebApi\\src\\app\\user\\user-register"
   ],
-  "SelectedNode": "\\AngularWithWebApi\\package.json",
+  "SelectedNode": "\\AngularWithWebApi\\src\\app\\Property\\Property-card\\Property-card.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -30,17 +30,6 @@ export class UserRegisterComponent implements OnInit {
 
     /* act as placeholder
     this.userregisterform.controls["username"].setValue('Name');*/
-
-
-    /*  this.userregisterform = new FormGroup({
-      username: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.email, Validators.required, Validators.minLength(5)]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
-      confirmpassword: new FormControl(null, [Validators.required]),
-      mobile: new FormControl(),
-    },
-    );
-    */
     
 
   }
@@ -60,16 +49,7 @@ export class UserRegisterComponent implements OnInit {
   }
  
  
-  //passwordMatchValidator(form: FormGroup) {
-  //  const password = form.get('password')?.value;
-  //  const confirmPassword = form.get('confirmpassword')?.value;
-
-  //  if (password === confirmPassword) {
-  //    return null; // Passwords match
-  //  } else {
-  //    return { passwordMismatch: true }; // Passwords don't match
-  //  }
-  //}
+ 
   get mobile() {
     return this.userregisterform.get('mobile') as FormControl;
   }
@@ -78,7 +58,6 @@ export class UserRegisterComponent implements OnInit {
 
     console.log(this.userregisterform.value);
     if (this.userregisterform.valid) {
-    /*   localStorage.setItem('users', JSON.stringify(this.user));*/
       this.submitted = false;
       this.userservice.AddUser(this.UserData());
       this.userregisterform.reset();

@@ -29,24 +29,26 @@
                <li class="nav-item">
                  <a *ngIf="!login()" routerLink="user/login" routerLinkActive="active" class="nav-link">Login</a>
              </li>
-             <!--<li class="nav-item">
+            <!-- <li class="nav-item">
                  <a *ngIf="login()" (click)="Logout()" routerLinkActive="active" class="nav-link">Logout</a>
             li>-->
 
 
 
 
-
-            <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown link
-  </a>
-
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
+<div *ngIf="login()" class="dropdown mr-6" dropdown  >
+  <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false"
+     aria-controls="basic-link-dropdown">Welcome {{loggedinuser}}</a>
+    <div class="dropdown-menu" *dropdownMenu>
+        <a href="#" class=dropdown-item>
+            <i class="fa-solid fa-eye"></i> View Dashboard</a>
+        <a href="#" class="dropdown-item">
+            <i class="fa-regular fa-user"></i> My Profile</a>
+        <a href="#" class="dropdown-item">
+            <i class="fa-solid fa-key"></i> Change Password</a>
+        <a href="#" (click)="Logout()" class="dropdown-item">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
 </div>
 
 

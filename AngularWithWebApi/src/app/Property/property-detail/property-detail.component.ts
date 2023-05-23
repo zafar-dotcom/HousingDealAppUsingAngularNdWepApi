@@ -18,7 +18,7 @@ and the url of this property-detail/:id so id would be fetching here
 /*    this will executed when params value change in the route of this Component nd return that url*/
     this.urlvaluefetcher.params.subscribe(
       (params) => {
-        this.propertydetailid = +params['id'];
+        this.propertydetailid = +params['id'];  //+ before params to make it integer
       }
     )
    /* this.propertydetailid = +this.urlvaluefetcher.snapshot.params['id'];*/
