@@ -1,6 +1,6 @@
 <div class="row mb-5">      <!--main row start-->
 
-    <div class="col-8" >
+    <div class="col-8 shadow-lg p-0 bg-white" >
 
 <div class="card">
 
@@ -9,13 +9,15 @@
     </div>
     <div class="card-body">
   <!--      #Form="ngForm"  is template variable and ngForm (its aa directive) is js representation of form -->
-        <form (ngSubmit)='onSubmit(Form)' #Form="ngForm">
+        <form (ngSubmit)='onSubmit()' [formGroup]="addpropertyform">
 
 
-         <div>
-              <tabset #formstab>
-                   
-                     <tab heading="Basic Information">
+         <div class="tab-panel">
+              <tabset #formstab class="member-tabset">
+                   <!--ngModelGroup="Basic info" its a directive to validate on tab level
+                        #ngmodelgroup="ngModelGroup" template variable to validate control on tab level
+                   -->
+ <!-- tab 1  -->     <tab heading="Basic Information" >
                         
                          <div class= "row" >   <!--main row-->
                             
@@ -23,28 +25,39 @@
                               <br/>
                                <div class="form-group col-12">
                               <p>I want to</p>
-                           <div class="btn-group" btnRadioGroup>
-                                <label class="btn btn-outline-primary" style="margin:0px 6px" btnRadio=1 role="button" name="sellrent"> Sell</label>
-                                 <label class="btn btn-outline-primary" btnRadio=2 role="button" name="sellrent"> Rent</label>
+                           <div class="btn-group" btnRadioGroup formControlName="sellrent" >
+                                <label class="btn btn-outline-primary" style="margin:0px 6px"
+                                btnRadio=1 role="button" name="sellrent"> Sell</label>
+                                 <label class="btn btn-outline-primary" btnRadio=2
+                                 role="button" name="sellrent"> Rent
+                             </label>
                           </div>
                          </div>
                          <br/>
                              <div class="form-group col-12">
   <!--BHK -->                                 <p>BHK</p>
-                                     <div class="btn-group" btnRadioGroup>
-                                         <label *ngFor="let bhk of [1,2,3,4]"
+                                     <div class="btn-group" btnRadioGroup 
+                                     [(ngModel)] ="propertyview.BHK"
+                                     formControlName="bhk" >
+                                         <label *ngFor="let bhk of [1,2,3,4]" 
                                          class="btn btn-outline-primary"
                                          style="margin:0px 6px" [btnRadio]="bhk" role="button" name="sellrent">
                                                 {{bhk}}</label>
                                      </div>
                               </div>
                               <br/>
+                             <!-- [(ngModel)]="propertyview.type" 2 way data binding ,when input value change
+                              the properttyview value updated immdei. and assigned the value of [btnRadio]="ptype" -->
  <!--proprty type -->           <div class="form-group col-12">
                                      <p>Property type</p>
-                                      <div class="btn-group" btnRadioGroup name="proptype" [(ngModel)]="propertyview.type" >
-                                             <label *ngFor="let ptype of propertytype"
-                                             class="btn btn-outline-primary"
-                                             style="margin:0px 6px" [btnRadio]="ptype" role="button" name="sellrent"
+                                      <div class="btn-group" btnRadioGroup
+                                      formControlName="proptype"
+                                      [(ngModel)]="propertyview.ptype"
+                                      >
+                                      <label *ngFor="let ptype of propertytype" 
+                                      class="btn btn-outline-primary"
+                                      style="margin:0px 6px" [btnRadio]="ptype"
+                                      role="button" name="sellrent"
                                              >
                                                {{ptype}}</label>
                                        </div>
@@ -53,10 +66,16 @@
 
 <!--proprty furnishing -->     <div class="form-group col-12">
                                      <p>Property Furnishing</p>
-                                        <div class="btn-group" btnRadioGroup>
-                                            <label *ngFor="let furproperty of furnishproperty"
+                                     <!--[(ngModel)]="propertyview.ftype" assgined the value of name="furnsgtype"
+                                     it means name attribute is mendatory for 2 way inding-->
+                                        <div class="btn-group" btnRadioGroup
+                                       formControlName="frtype"
+                                       [(ngModel)]="propertyview.ftype"  
+                                       >
+                                            <label *ngFor="let furproperty of furnishproperty" 
                                               class="btn btn-outline-primary"
-                                              style="margin:0px 6px" [btnRadio]="furproperty" role="button" name="sellrent">
+                                              style="margin:0px 6px" [btnRadio]="furproperty"
+                                              role="button" name="FurnishType" >
                                              {{furproperty}}</label>
                                       </div>
                                 </div>
@@ -66,27 +85,33 @@
                                <!-- ngModel is to get forms value in console  and name appear as key in console-->
                               <!--#propname="ngModel" to get js object refernec by template variable-->
                             <!--  [(ngModel)]="propertyview.name"  its called "two way binding"-->
-                                     <input type="text" class="form-control form-control-sm"
-                                      required #propname="ngModel" ngModel name="name" minlength="5" [(ngModel)]="propertyview.name"  />
-                                     <span *ngIf="!propname.valid && propname.touched" class="error-block">
+                                     <input  type="text" class="form-control form-control-sm"
+                                      formControlName="name" minlength="5"
+                                      [(ngModel)]="propertyview.name"
+                                       />
+                                     <!--<span *ngIf="!propname.valid && propname.touched" class="error-block">
               
                                     <span *ngIf="propname.hasError('required')">Please provide name</span>
                 
                                     <span *ngIf="propname.hasError('minlength')"> Name must be atleast 5 character long</span>
-                                </span>
+                                </span>-->
                             </div>
                             <br/>
                             <div class="form-group col-12" >
-                                 <label for="type"  style ="color:skyblue ;font-weight: bold;">City</label>     <br/>
+                                 <label for="type"  style ="color:skyblue ;font-weight: bold;">City</label>
+                                 <br/>
                                  <input type="text" class="form-control form-control-sm"
-                                 required name="city" 
-                                 />
+                                  formControlName="city" [(ngModel)]="propertyview.city"
+                                 
+                                  />
                            </div>
                              <br/>
                     
                      <div class="form-group col-12">
-                             <button type="button" class="btn btn-primary btn-block"
-                              (click)="selectTab(1)">Next</button>
+                       <!--  [disabled]="ngmodelgroup" button disabled
+                             until all required filed of this tabs or empty-->
+                             <button type="button" class="btn btn-primary btn-block"               
+                              (click)="selectTab(1)" >Next</button>
                        
                      </div>
 
@@ -95,14 +120,15 @@
                     
                     </div>  <!-- main row-->
 
-  
-                     </tab>
+ 
+<!-- end 1st tab -->                   </tab>
 
-    <!-- Pricing-->
+    <!-- 2nd tab Pricing-->
                      <tab heading="Pricing and Areas">
                         <div class="form-group col-12">
                 <label>Price (in USD)</label>
-                <input type="text" class="form-control" name="price" [(ngModel)]="propertyview.price">
+                <input type="text" class="form-control" formControlName="price"
+                [(ngModel)]="propertyview.price" >
               </div>
 
               <div class="form-group col-12">
@@ -117,7 +143,10 @@
 
               <div class="form-group col-12">
                 <label>Built Area (in Sqr Feet)</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="area"
+                [(ngModel)]="propertyview.builtArea"
+                
+                >
               </div>
 
               <div class="form-group col-12">
@@ -269,10 +298,12 @@
 <div class="col-4">
      <div class="card-header">
     <h3> Property Preview</h3>
-   <div>
-        <app-property-card [property]="propertyview"></app-property-card>
+   </div>
+   <div class="shadow-lg p-3 bg-white">
+       <!--By property binding we are passing properrtyview data to app-property-card variable-->
+        <app-property-card [property]="propertyview" [hiddeicon]="true"></app-property-card>
     </div>
- </div>
+
   
 </div>     <!-- col-4-->
 

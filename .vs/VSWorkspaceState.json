@@ -5,12 +5,11 @@
     "\\AngularWithWebApi\\src",
     "\\AngularWithWebApi\\src\\app",
     "\\AngularWithWebApi\\src\\app\\Property",
-    "\\AngularWithWebApi\\src\\app\\Property\\Property-card",
+    "\\AngularWithWebApi\\src\\app\\Property\\property-list",
     "\\AngularWithWebApi\\src\\app\\services",
-    "\\AngularWithWebApi\\src\\app\\user",
-    "\\AngularWithWebApi\\src\\app\\user\\user-login",
-    "\\AngularWithWebApi\\src\\app\\user\\user-register"
+    "\\AngularWithWebApi\\src\\assets",
+    "\\AngularWithWebApi\\src\\assets\\images",
+    "\\AngularWithWebApi\\src\\data"
   ],
-  "SelectedNode": "\\AngularWithWebApi\\src\\app\\Property\\Property-card\\Property-card.component.html",
   "PreviewInSolutionExplorer": false
 }
