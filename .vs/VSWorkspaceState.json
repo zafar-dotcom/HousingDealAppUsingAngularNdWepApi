@@ -4,12 +4,13 @@
     "\\AngularWithWebApi",
     "\\AngularWithWebApi\\src",
     "\\AngularWithWebApi\\src\\app",
+    "\\AngularWithWebApi\\src\\app\\Model",
     "\\AngularWithWebApi\\src\\app\\Property",
     "\\AngularWithWebApi\\src\\app\\Property\\property-list",
     "\\AngularWithWebApi\\src\\app\\services",
     "\\AngularWithWebApi\\src\\assets",
-    "\\AngularWithWebApi\\src\\assets\\images",
     "\\AngularWithWebApi\\src\\data"
   ],
+  "SelectedNode": "\\AngularWithWebApi",
   "PreviewInSolutionExplorer": false
 }

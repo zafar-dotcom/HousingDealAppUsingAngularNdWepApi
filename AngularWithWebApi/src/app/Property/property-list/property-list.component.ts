@@ -24,6 +24,11 @@ export class PropertyListComponent implements OnInit {
       data => {
         console.log(data);
         this.properties = data;
+        let new_property_by_class_obj = localStorage.getItem('newproperty');
+        const clasobjvalues = new_property_by_class_obj ? JSON.parse(new_property_by_class_obj) : [];
+        if (clasobjvalues.sellrent == this.sellrent) {
+          this.properties.push(clasobjvalues);
+        }
       },
       error => {
         console.log(error);

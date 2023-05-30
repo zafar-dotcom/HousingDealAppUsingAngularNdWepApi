@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Ipropertybase } from '../Model/ipropertybase';
+import { Property } from '../Model/property';
 import { IProperty } from '../Property/iproperty';
 
 
@@ -26,8 +27,12 @@ export class HousingService {
       return propertyarray;
     })
   );
-}
-
+  }
+/*method to store class obj to local storage and that obj has already taken values
+from ipropertbase interface through forms in addproperty ts file*/
+  Addproperty(property: Property) {
+    localStorage.setItem('newproperty', JSON.stringify(property));
+  }
 }
 
 
